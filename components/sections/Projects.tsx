@@ -1,8 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
 import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import ProjectCard from "@/components/ui/ProjectCard";
 import { projects } from "@/data/projects";
 
@@ -21,12 +20,8 @@ export default function Projects() {
           className="flex flex-col gap-12"
         >
           <div className="flex flex-col gap-2">
-            <p className="font-jetbrains text-accent text-sm tracking-widest uppercase">
-              Trabalhos
-            </p>
-            <h2 className="font-inter text-3xl sm:text-4xl font-bold text-text-primary">
-              Projetos & Relatórios
-            </h2>
+            <p className="font-jetbrains text-accent text-sm tracking-widest uppercase">Trabalhos</p>
+            <h2 className="font-inter text-3xl sm:text-4xl font-bold text-text-primary">Projetos & Relatórios</h2>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

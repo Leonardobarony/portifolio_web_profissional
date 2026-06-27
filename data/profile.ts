@@ -1,5 +1,5 @@
 export const profile = {
-  name: "Leonardo Barony",
+  name: "Leonardo Augusto Barony",
   title: "Data Engineer | Python · PySpark · Microsoft Fabric | Power BI Tech Leader",
   tagline: "Transformando dados em decisões — da engenharia ao insight.",
   location: "Contagem, Minas Gerais, Brasil",

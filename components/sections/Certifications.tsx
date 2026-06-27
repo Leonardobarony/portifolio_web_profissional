@@ -1,8 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
 import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import { certifications, courses } from "@/data/certifications";
 
 export default function Certifications() {
@@ -20,33 +19,23 @@ export default function Certifications() {
           className="flex flex-col gap-12"
         >
           <div className="flex flex-col gap-2">
-            <p className="font-jetbrains text-accent text-sm tracking-widest uppercase">
-              Formação Contínua
-            </p>
-            <h2 className="font-inter text-3xl sm:text-4xl font-bold text-text-primary">
-              Certificações & Cursos
-            </h2>
+            <p className="font-jetbrains text-accent text-sm tracking-widest uppercase">Formação Contínua</p>
+            <h2 className="font-inter text-3xl sm:text-4xl font-bold text-text-primary">Certificações & Cursos</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div className="flex flex-col gap-10">
             <div className="flex flex-col gap-4">
               <h3 className="font-inter text-base font-semibold text-text-primary border-b border-border pb-2">
                 Certificações
               </h3>
-              {certifications.length === 0 ? (
-                <p className="text-text-muted text-sm italic">
-                  Em breve — DP-600 Microsoft Fabric Analytics Engineer
-                </p>
-              ) : (
-                <ul className="flex flex-col gap-2">
-                  {certifications.map((cert) => (
-                    <li key={cert} className="text-text-muted text-sm flex gap-2">
-                      <span className="text-accent shrink-0">›</span>
-                      {cert}
-                    </li>
-                  ))}
-                </ul>
-              )}
+              <ul className="flex flex-col gap-2">
+                {certifications.map((cert) => (
+                  <li key={cert} className="text-text-muted text-sm flex gap-2">
+                    <span className="text-accent shrink-0">›</span>
+                    {cert}
+                  </li>
+                ))}
+              </ul>
             </div>
 
             <div className="flex flex-col gap-4">

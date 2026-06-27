@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
+import { profile } from "@/data/profile";
 import "@fontsource/inter/400.css";
 import "@fontsource/inter/500.css";
 import "@fontsource/inter/700.css";
@@ -8,15 +9,15 @@ import "@fontsource/jetbrains-mono/700.css";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Leonardo Barony | Data Engineer & Power BI Tech Leader",
+  title: `${profile.name} | Data Engineer & Power BI Tech Leader`,
   description:
-    "Portfólio de Leonardo Barony — Data Engineer com expertise em PySpark, Microsoft Fabric, Databricks e Power BI. Baseado em Contagem, MG.",
+    `Portfólio de ${profile.name} — Data Engineer com expertise em PySpark, Microsoft Fabric, Databricks e Power BI. Baseado em Contagem, MG.`,
   openGraph: {
-    title: "Leonardo Barony | Data Engineer & Power BI Tech Leader",
+    title: `${profile.name} | Data Engineer & Power BI Tech Leader`,
     description:
-      "Portfólio de Leonardo Barony — Data Engineer com expertise em PySpark, Microsoft Fabric, Databricks e Power BI.",
+      `Portfólio de ${profile.name} — Data Engineer com expertise em PySpark, Microsoft Fabric, Databricks e Power BI.`,
     url: "https://leonardobarony.dev",
-    siteName: "Leonardo Barony",
+    siteName: profile.name,
     images: [{ url: "/og-image.png", width: 1200, height: 630 }],
     locale: "pt_BR",
     type: "website",

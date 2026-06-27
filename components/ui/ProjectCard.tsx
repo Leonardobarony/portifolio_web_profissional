@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { ExternalLink, BarChart2, AppWindow, Code2 } from "lucide-react";
 import type { Project, ProjectType } from "@/data/projects";
 
@@ -11,9 +12,9 @@ interface ProjectCardProps {
   project: Project;
 }
 
-export default function ProjectCard({ project }: ProjectCardProps) {
+const ProjectCard = memo(function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <div className="flex flex-col gap-4 p-6 rounded-xl bg-bg-card border border-border hover:-translate-y-1 transition-transform duration-200">
+    <div className="flex flex-col gap-4 p-6 rounded-xl bg-bg-card border border-border hover:-translate-y-1 transition-transform duration-200 h-full">
       <div className="flex items-center gap-2">
         {typeIcon[project.type]}
         <span className="font-jetbrains text-xs text-accent uppercase tracking-wide">
@@ -51,4 +52,6 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       </a>
     </div>
   );
-}
+});
+
+export default ProjectCard;

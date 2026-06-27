@@ -73,7 +73,7 @@ export default function Hero() {
           <div className="relative w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 rounded-full overflow-hidden border-4 border-accent/30 shadow-2xl shadow-accent/10">
             <Image
               src={profile.avatar}
-              alt="Foto de Leonardo Barony"
+              alt={`Foto de ${profile.name}`}
               fill
               className="object-cover"
               priority

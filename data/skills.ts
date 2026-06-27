@@ -10,7 +10,7 @@ export const skills: SkillCategory[] = [
   },
   {
     category: "Cloud & Plataformas",
-    items: ["Microsoft Fabric", "AWS (IAM, RDS, S3, Glue, Athena, Redshift)", "Databricks", "Docker"],
+    items: ["Microsoft Fabric", "AWS", "S3 / Glue / Athena", "Redshift", "Databricks", "Docker"],
   },
   {
     category: "BI & Visualização",
@@ -39,7 +39,7 @@ export const skills: SkillCategory[] = [
   {
     category: "Arquitetura de Dados",
     items: [
-      "Medallion Architecture (Bronze/Silver/Gold)",
+      "Medallion Architecture",
       "Star Schema",
       "Data Marts",
       "Data Lake",

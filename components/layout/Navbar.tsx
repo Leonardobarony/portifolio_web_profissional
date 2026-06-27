@@ -12,6 +12,31 @@ const links = [
   { label: "Projetos", href: "#projects" },
 ];
 
+interface NavLinkProps {
+  href: string;
+  label: string;
+  active: boolean;
+  mobile?: boolean;
+  onClick?: () => void;
+}
+
+function NavLink({ href, label, active, mobile = false, onClick }: NavLinkProps) {
+  const base = "text-sm transition-colors";
+  const activeClass = "text-accent";
+  const inactiveClass = "text-text-muted hover:text-text-primary";
+  const mobileClass = mobile ? "block px-6 py-3" : "";
+
+  return (
+    <a
+      href={href}
+      onClick={onClick}
+      className={`${base} ${mobileClass} ${active ? activeClass : inactiveClass}`}
+    >
+      {label}
+    </a>
+  );
+}
+
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("");
@@ -39,29 +64,18 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 inset-x-0 z-50 bg-bg-primary/80 backdrop-blur border-b border-border">
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-        <span className="font-jetbrains text-accent font-bold tracking-tight">
-          LB
+        <span className="font-inter text-accent font-bold text-sm tracking-tight whitespace-nowrap flex-shrink-0">
+          Leonardo Augusto Barony
         </span>
 
-        {/* Desktop */}
         <ul className="hidden md:flex items-center gap-6">
           {links.map(({ label, href }) => (
             <li key={href}>
-              <a
-                href={href}
-                className={`font-inter text-sm transition-colors ${
-                  active === href
-                    ? "text-accent"
-                    : "text-text-muted hover:text-text-primary"
-                }`}
-              >
-                {label}
-              </a>
+              <NavLink href={href} label={label} active={active === href} />
             </li>
           ))}
         </ul>
 
-        {/* Mobile toggle */}
         <button
           className="md:hidden text-text-muted hover:text-text-primary"
           onClick={() => setOpen((v) => !v)}
@@ -71,22 +85,17 @@ export default function Navbar() {
         </button>
       </nav>
 
-      {/* Mobile menu */}
       {open && (
         <ul className="md:hidden flex flex-col border-t border-border bg-bg-primary">
           {links.map(({ label, href }) => (
             <li key={href}>
-              <a
+              <NavLink
                 href={href}
+                label={label}
+                active={active === href}
+                mobile
                 onClick={() => setOpen(false)}
-                className={`block px-6 py-3 text-sm transition-colors ${
-                  active === href
-                    ? "text-accent"
-                    : "text-text-muted hover:text-text-primary"
-                }`}
-              >
-                {label}
-              </a>
+              />
             </li>
           ))}
         </ul>

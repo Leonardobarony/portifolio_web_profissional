@@ -1,8 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
 import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import SkillBadge from "@/components/ui/SkillBadge";
 import { skills } from "@/data/skills";
 
@@ -21,12 +20,8 @@ export default function Skills() {
           className="flex flex-col gap-12"
         >
           <div className="flex flex-col gap-2">
-            <p className="font-jetbrains text-accent text-sm tracking-widest uppercase">
-              Competências
-            </p>
-            <h2 className="font-inter text-3xl sm:text-4xl font-bold text-text-primary">
-              Stack Técnico
-            </h2>
+            <p className="font-jetbrains text-accent text-sm tracking-widest uppercase">Competências</p>
+            <h2 className="font-inter text-3xl sm:text-4xl font-bold text-text-primary">Stack Técnico</h2>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -38,9 +33,7 @@ export default function Skills() {
                 transition={{ duration: 0.5, delay: i * 0.07 }}
                 className="flex flex-col gap-3 p-5 rounded-xl bg-bg-card border border-border"
               >
-                <h3 className="font-inter text-sm font-semibold text-text-primary">
-                  {category}
-                </h3>
+                <h3 className="font-inter text-sm font-semibold text-text-primary">{category}</h3>
                 <div className="flex flex-wrap gap-2">
                   {items.map((item) => (
                     <SkillBadge key={item} label={item} />

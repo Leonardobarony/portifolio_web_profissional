@@ -1,8 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
 import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 const stats = [
   { value: "15+", label: "anos em tecnologia" },
@@ -25,12 +24,8 @@ export default function About() {
           className="flex flex-col gap-12"
         >
           <div className="flex flex-col gap-2">
-            <p className="font-jetbrains text-accent text-sm tracking-widest uppercase">
-              Sobre
-            </p>
-            <h2 className="font-inter text-3xl sm:text-4xl font-bold text-text-primary">
-              Quem sou eu
-            </h2>
+            <p className="font-jetbrains text-accent text-sm tracking-widest uppercase">Sobre</p>
+            <h2 className="font-inter text-3xl sm:text-4xl font-bold text-text-primary">Quem sou eu</h2>
           </div>
 
           <div className="flex flex-col lg:flex-row gap-12">
@@ -60,12 +55,8 @@ export default function About() {
             <div className="flex flex-row lg:flex-col gap-6 justify-center">
               {stats.map(({ value, label }) => (
                 <div key={label} className="flex flex-col items-center lg:items-start gap-1">
-                  <span className="font-inter text-4xl font-bold text-accent">
-                    {value}
-                  </span>
-                  <span className="font-jetbrains text-xs text-text-muted">
-                    {label}
-                  </span>
+                  <span className="font-inter text-4xl font-bold text-accent">{value}</span>
+                  <span className="font-jetbrains text-xs text-text-muted">{label}</span>
                 </div>
               ))}
             </div>

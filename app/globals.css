@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #0A0E1A;
+  --bg-card: #111827;
+  --accent: #00C4CC;
+  --accent-hover: #00A3AA;
+  --text-primary: #F9FAFB;
+  --text-muted: #9CA3AF;
+  --border: #1F2937;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: "Inter", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
